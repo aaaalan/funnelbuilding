@@ -1,1 +1,1 @@
-echo "hi";
+console.log("HI");
