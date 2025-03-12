@@ -1,6 +1,7 @@
-console.warn("-------");
-console.warn("build by netwings");
-console.warn("-------");
+console.log("%c▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "color: #39FF14; font-weight: bold;");
+console.log("%c🚀 Built by netwings 🚀", "color: #39FF14; font-size: 16px; font-weight: bold; text-shadow: 2px 2px 5px rgba(57, 255, 20, 0.8);");
+console.log("%c🔗 Visit: https://netwings.at", "color: #39FF14; font-size: 14px;");
+console.log("%c▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", "color: #39FF14; font-weight: bold;");
 
 
 var checkForjQuery = setInterval(function () {
