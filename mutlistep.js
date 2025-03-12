@@ -1,8 +1,6 @@
-console.log("HI");
-console.log("HI");
-console.log("HI");
-console.log("HI");
-console.log("Hi");
+console.warn("-------");
+console.warn("build by netwings");
+console.warn("-------");
 
 
 var checkForjQuery = setInterval(function () {
@@ -102,16 +100,12 @@ var checkForjQuery = setInterval(function () {
       }
       // update webflow form
       function webflowForm(formID) {
-        console.log(formID); 
         var form = $(formID);
         var sub = form.find("input[type=submit]");
         var btn = sub.parent(".btn");
-        console.log(form);
-        console.log(sub);
-        console.log(btn);
+
         btn.on("click", function (e) {
           e.preventDefault();
-          console.log("click");
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
           console.log(name.length, email.length);
@@ -143,7 +137,6 @@ var checkForjQuery = setInterval(function () {
           
           // show Step 2
           if(!step2Shown) {
-            console.log(step2Shown);
             email.after(
                 `<div class="radio-button-field text-field w-radio">
                 <input
@@ -191,7 +184,6 @@ var checkForjQuery = setInterval(function () {
         }
       }
       formIds.forEach((formId) => {
-        console.log(formId+ " Init");
         webflowForm(formId);
       });
 
