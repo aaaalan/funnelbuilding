@@ -34,37 +34,45 @@ var checkForjQuery = setInterval(function () {
       let webinarDate;
   
       function getCountdown() {
-        // Get the current time
+        // Aktuelle Zeit holen
         var currentTime = new Date();
-        // Calculate the next quarter hour
+        
+        // Nächstes Viertelstunde-Intervall berechnen
         var nextQuarterHour = new Date();
         nextQuarterHour.setMinutes(Math.ceil(currentTime.getMinutes() / 15) * 15);
         nextQuarterHour.setSeconds(0);
         nextQuarterHour.setMilliseconds(0);
-        // If we're past the next quarter hour, add 15 minutes to get the next one
+    
+        // Falls die nächste Viertelstunde schon vergangen ist, um 15 Minuten erhöhen
         if (nextQuarterHour <= currentTime) {
-          nextQuarterHour.setMinutes(nextQuarterHour.getMinutes() + 15);
+            nextQuarterHour.setMinutes(nextQuarterHour.getMinutes() + 15);
         }
-        // Calculate the time remaining until the next quarter hour
+    
+        // Zeit bis zur nächsten Viertelstunde berechnen
         var timeRemaining = nextQuarterHour - currentTime;
-        // Convert the time remaining to minutes and seconds
         var minutes = Math.floor(timeRemaining / 60000);
         var seconds = Math.floor((timeRemaining % 60000) / 1000);
-        // Format the countdown string
-        countdown = minutes + " minutes and " + seconds + " seconds";
-        // Get the timestamp of the next quarter hour in the browser's timezone
-        timestamp = nextQuarterHour.toLocaleString();
-        // Get the date of the webinar in human-readable format
-        const dateOptions = { year: "numeric", month: "2-digit", day: "2-digit" };
-        const timeOptions = { hour: "2-digit", minute: "2-digit", hour12: true };
-        webinarDate =
-          nextQuarterHour.toLocaleDateString("default", dateOptions) +
-          ", " +
-          nextQuarterHour
-            .toLocaleTimeString("default", timeOptions)
-            .toUpperCase();
-        $(".new-timer-.heute").html(webinarDate);
-      }
+    
+        // Countdown-String formatieren
+        countdown = minutes + " Minuten und " + seconds + " Sekunden";
+    
+        // Zeitstempel der nächsten Viertelstunde in deutscher Zeitzone
+        var germanTime = new Intl.DateTimeFormat('de-DE', {
+            timeZone: "Europe/Berlin",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+        }).format(nextQuarterHour);
+    
+        // Deutsche Ausgabe formatieren
+        webinarDate = "Heute, " + germanTime.replace(",", " -") + " Uhr";
+    
+        // Countdown-Anzeige in HTML aktualisieren
+        document.querySelector(".new-timer-.heute").innerHTML = webinarDate;
+    }
   
       getCountdown();
       var getUrlParameter = function getUrlParameter(sParam) {
