@@ -1,4 +1,24 @@
-import { CookieService } from './cookie-service.js';
+const CookieService = {
+    setCookie(name, value, minutes) {
+        let expires = '';
+        if (minutes) {
+            const date = new Date();
+            date.setTime(date.getTime() + (minutes * 60 * 1000));
+            expires = '; expires=' + date.toUTCString();
+        }
+        document.cookie = name + '=' + (value || '') + expires + ';';
+    },
+
+    getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            if (cookie.indexOf(name + '=') > -1) {
+                return cookie.split('=')[1];
+            }
+        }
+        return null;
+    }
+};
 
 const cooldownMinutes = 180; // Set the cooldown period in minutes
 const popupCooldownCookie = 'popupCooldownGo'; // Cookie name for the cooldown
