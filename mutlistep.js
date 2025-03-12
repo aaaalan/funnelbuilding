@@ -68,7 +68,7 @@ var checkForjQuery = setInterval(function () {
         }).format(nextQuarterHour);
     
         // Deutsche Ausgabe formatieren
-        webinarDate = "Heute, " + germanTime.replace(",", " -") + " Uhr";
+        webinarDate = germanTime.replace(",", " -") + " Uhr";
     
         // Countdown-Anzeige in HTML aktualisieren
         $(".new-timer-.heute").html(webinarDate);
