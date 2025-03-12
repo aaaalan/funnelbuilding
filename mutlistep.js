@@ -98,6 +98,9 @@ var checkForjQuery = setInterval(function () {
         var form = $(formID);
         var sub = form.find("input[type=submit]");
         var btn = sub.parent(".btn");
+        console.log(form);
+        console.log(sub);
+        console.log(btn);
         btn.on("click", function (e) {
           e.preventDefault();
           console.log("click");
