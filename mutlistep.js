@@ -94,7 +94,7 @@ var checkForjQuery = setInterval(function () {
       }
       // update webflow form
       function webflowForm(formID) {
-        console.log(formID);
+        console.log(formID); 
         var form = $(formID);
         var sub = form.find("input[type=submit]");
         var btn = sub.parent(".btn");
@@ -186,29 +186,7 @@ var checkForjQuery = setInterval(function () {
         console.log(formId+ " Init");
         webflowForm(formId);
       });
-      function addToHsAjax(firstName, email) {
-        $.ajax({
-          url: "https://publishing-registration.herokuapp.com/add-to-hs",
-          type: "post",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          data: JSON.stringify({
-            firstName: firstName,
-            email: email,
-            webinarId: webinarId,
-            wjMemberId: wjMemberId,
-            formType: "1 Click Url",
-          }),
-          cache: false,
-          success: function (response) {
-            if (alertsOn) {
-              alert(JSON.stringify(response));
-            }
-            return response;
-          },
-        });
-      }
+
       clearInterval(checkForjQuery);
     }
   }, 10); // check every 10ms
