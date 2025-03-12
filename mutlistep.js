@@ -152,7 +152,7 @@ var checkForjQuery = setInterval(function () {
                     class="webinar_schedule_radio_class"
                     value="jot"
                     checked
-                />Heute, ${webinarDate} - ${timezone}
+                />Heute, ${webinarDate} - ${timezone} <span class="text-size-tiny text-style-muted">(in ${countdown})</span>
             </div>`
             );
 
