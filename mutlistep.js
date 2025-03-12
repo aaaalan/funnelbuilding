@@ -179,6 +179,7 @@ var checkForjQuery = setInterval(function () {
         }
       }
       formIds.forEach((formId) => {
+        console.log(formID+ " Init");
         webflowForm(formId);
       });
       function addToHsAjax(firstName, email) {
