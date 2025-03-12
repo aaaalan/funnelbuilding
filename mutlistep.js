@@ -71,7 +71,7 @@ var checkForjQuery = setInterval(function () {
         webinarDate = "Heute, " + germanTime.replace(",", " -") + " Uhr";
     
         // Countdown-Anzeige in HTML aktualisieren
-        document.querySelector(".new-timer-.heute").innerHTML = webinarDate;
+        document.querySelector(".new-timer-.heute").html = webinarDate;
     }
   
       getCountdown();
