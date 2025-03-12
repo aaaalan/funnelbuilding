@@ -100,6 +100,7 @@ var checkForjQuery = setInterval(function () {
         var btn = sub.parent(".btn");
         btn.on("click", function (e) {
           e.preventDefault();
+          console.log("click");
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
           console.log(name.length, email.length);
