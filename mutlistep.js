@@ -170,16 +170,16 @@ var checkForjQuery = setInterval(function () {
       }
       function validateName(name) {
         if (name === "" || name === 0) {
-          return { isValid: false, msg: "Name can not be empty" };
+          return { isValid: false, msg: "Name darf nicht leer sein." };
         } else {
           return { isValid: true };
         }
       }
       function validateEmail(email) {
         if (email === "") {
-          return { isValid: false, msg: "Email can not be empty" };
+          return { isValid: false, msg: "Email darf nicht leer sein." };
         } else if (!isEmailAddressValid(email)) {
-          return { isValid: false, msg: "Please enter valid email." };
+          return { isValid: false, msg: "Bitte eine gültige E-Mail-Adresse eingeben." };
         } else {
           return { isValid: true };
         }
