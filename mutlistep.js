@@ -158,7 +158,7 @@ var checkForjQuery = setInterval(function () {
 
             //summit-form__submit-btn w-button
   
-            btn.find(".summit-btn__text").text("Select a Time to Join");
+            btn.find(".webinar-btn__text").text("Uhrzeit auswählen");
             //btn.find(".summit-btn__text-subtitle").text("");
             step2Shown = true;
           }
