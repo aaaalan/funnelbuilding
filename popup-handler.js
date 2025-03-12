@@ -1,3 +1,5 @@
+import {} from "./cookie-service.js";
+
 const CookieService = {
     setCookie(name, value, minutes) {
         let expires = '';
