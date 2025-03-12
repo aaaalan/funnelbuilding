@@ -180,7 +180,7 @@ var checkForjQuery = setInterval(function () {
         }
       }
       formIds.forEach((formId) => {
-        console.log(formID+ " Init");
+        console.log(formId+ " Init");
         webflowForm(formId);
       });
       function addToHsAjax(firstName, email) {
