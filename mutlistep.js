@@ -131,6 +131,7 @@ var checkForjQuery = setInterval(function () {
           
           // show Step 2
           if(!step2Shown) {
+            console.log(step2Shown);
             email.after(
                 `<div class="radio-button-field text-field w-radio">
                 <input
