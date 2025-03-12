@@ -28,7 +28,7 @@ var checkForjQuery = setInterval(function () {
       let webinarId     = deviceType == "mobile" ? mobileWebinarId : desktopWebinarId;
       let webinarHash   = deviceType == "mobile" ? mobileWebinarHash : desktopWebinarHash;
       let schedule      = deviceType == "mobile" ? mobileSchedule : desktopSchedule;
-      let step2Shown    = false
+      let step2Shown    = false;
       let countdown;
       let timestamp;
       let webinarDate;
