@@ -1,10 +1,10 @@
 let variantId = null;
 
   document.addEventListener('click', function(event) {
-    const clickedButton = event.target.closest('a[data-optibase-variant-id]');
+    const clickedButton = event.target.closest('a[section-btn]');
     if (clickedButton) {
       console.log('Klick auf Button erkannt:', clickedButton);
-      variantId = clickedButton.getAttribute('data-optibase-variant-id') || 'default';
+      variantId = clickedButton.getAttribute('section-btn') || 'default';
       console.log('Extrahierter utm_term (variant_id):', variantId);
 
       // Check if iFrame already exists
@@ -14,7 +14,7 @@ let variantId = null;
       } else {
         observeForIframe();
       }
-    }
+    } 
   });
 
   function updateIframeUrl(iframe) {
