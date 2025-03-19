@@ -14,7 +14,7 @@ let variantId = null;
       } else {
         observeForIframe();
       }
-    }
+    } 
   });
 
   function updateIframeUrl(iframe) {
