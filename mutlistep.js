@@ -105,8 +105,15 @@ var checkForjQuery = setInterval(function () {
         var sub = form.find("input[type=submit]");
         var btn = sub.parent(".btn");
 
-        btn.on("click", function (e) {
-          e.preventDefault();
+        btn.on("click", async function (e) {
+          try {
+            if (typeof window.__getcIDs === 'function') {
+                await window[window.__getcIDs()[0]].eventLead();
+            }
+        } catch (error) {
+            console.error("Error triggering eventLead:", error);
+        }
+
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
           console.log(name.length, email.length);
@@ -156,8 +163,7 @@ var checkForjQuery = setInterval(function () {
             //btn.find(".summit-btn__text-subtitle").text("");
             step2Shown = true;
           }
-  
-  
+    
           setTimeout(function () {
             let baseUrl = "https://event.webinarjam.com/register/1click";
             let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${name.val()}&schedule_id=${schedule}`;
@@ -166,6 +172,7 @@ var checkForjQuery = setInterval(function () {
               window.location.href = oneClickUrl;
             });
           }, 100);
+          e.preventDefault();
         });
       }
       function validateName(name) {
