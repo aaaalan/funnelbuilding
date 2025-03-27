@@ -107,14 +107,7 @@ var checkForjQuery = setInterval(function () {
 
         btn.on("click", async function (e) {
           e.preventDefault();
-          try {
-            console.log("triggering eventLead"); 
-            if (typeof window.__getcIDs === 'function') {
-                await window[window.__getcIDs()[0]].eventLead();
-            }
-        } catch (error) {
-            console.error("Error triggering eventLead:", error);
-        }
+
 
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
@@ -170,8 +163,16 @@ var checkForjQuery = setInterval(function () {
             console.log("click");
             let baseUrl = "https://event.webinarjam.com/register/1click";
             let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${name.val()}&schedule_id=${schedule}`;
-            btn.on("click", function () {
+            btn.on("click", async function () {
               // register to webinar
+              try {
+                console.log("triggering eventLead"); 
+                if (typeof window.__getcIDs === 'function') {
+                    await window[window.__getcIDs()[0]].eventLead();
+                }
+            } catch (error) {
+                console.error("Error triggering eventLead:", error);
+            }
               console.log("oneClickUrl", oneClickUrl);
               window.location.href = oneClickUrl;
             });
