@@ -108,7 +108,7 @@ var checkForjQuery = setInterval(function () {
         btn.on("click", async function (e) {
           e.preventDefault();
           try {
-            console.log("triggering eventLead");
+            console.log("triggering eventLead"); 
             if (typeof window.__getcIDs === 'function') {
                 await window[window.__getcIDs()[0]].eventLead();
             }
