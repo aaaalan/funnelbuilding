@@ -106,6 +106,7 @@ var checkForjQuery = setInterval(function () {
         var btn = sub.parent(".btn");
 
         btn.on("click", async function (e) {
+          e.preventDefault();
           try {
             if (typeof window.__getcIDs === 'function') {
                 await window[window.__getcIDs()[0]].eventLead();
@@ -172,7 +173,7 @@ var checkForjQuery = setInterval(function () {
               window.location.href = oneClickUrl;
             });
           }, 100);
-          e.preventDefault();
+
         });
       }
       function validateName(name) {
