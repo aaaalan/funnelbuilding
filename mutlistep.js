@@ -167,6 +167,7 @@ var checkForjQuery = setInterval(function () {
           }
     
           setTimeout(function () {
+            console.log("click");
             let baseUrl = "https://event.webinarjam.com/register/1click";
             let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${name.val()}&schedule_id=${schedule}`;
             btn.on("click", function () {
