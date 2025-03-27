@@ -111,7 +111,6 @@ var checkForjQuery = setInterval(function () {
 
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
-          console.log(name.length, email.length);
           // form validation
           name.siblings("p").remove();
           if (!validateName(name.val()).isValid) {
