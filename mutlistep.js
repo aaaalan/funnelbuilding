@@ -172,6 +172,7 @@ var checkForjQuery = setInterval(function () {
             let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${name.val()}&schedule_id=${schedule}`;
             btn.on("click", function () {
               // register to webinar
+              console.log("oneClickUrl", oneClickUrl);
               window.location.href = oneClickUrl;
             });
           }, 100);
