@@ -111,6 +111,7 @@ var checkForjQuery = setInterval(function () {
 
           var name = form.find("input[name^=name]");
           var email = form.find("input[name^=email]");
+          console.log(name.length, email.length);
           // form validation
           name.siblings("p").remove();
           if (!validateName(name.val()).isValid) {
@@ -161,7 +162,7 @@ var checkForjQuery = setInterval(function () {
           setTimeout(function () {
             console.log("click");
             let baseUrl = "https://event.webinarjam.com/register/1click";
-            let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${encodeURIComponent(name)}&schedule_id=${schedule}`;
+            let oneClickUrl = `${baseUrl}/${webinarId}/${webinarHash}?email=${email.val()}&first_name=${name.val()}&schedule_id=${schedule}`;
             btn.on("click", async function () {
               // register to webinar
               try {
